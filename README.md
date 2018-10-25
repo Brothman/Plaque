@@ -1,24 +1,16 @@
-# README
+# Plaque
+Benji's Favorite Slack Clone 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**plaque**
 
-Things you may want to cover:
+/plak/
 
-* Ruby version
+noun
 
-* System dependencies
+1.
+*an ornamental tablet, typically of metal, porcelain, or wood, that is fixed to a wall or other surface in commemoration of a person or event.
+synonyms:	plate, tablet, panel, sign, cartouche, brass
+"a plaque in her honor was placed on the door to the auditorium"*
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+2.
+**a sticky deposit on teeth in which bacteria proliferate.**
