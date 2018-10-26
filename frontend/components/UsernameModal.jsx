@@ -2,6 +2,7 @@ import React from 'react';
 
 const UsernameModal = ({ updateUsername }) => {
 
+    //calls InstantMessage's updateUsername method to update the state of Instant Message
     const fireUpdateUsername = (e) => {
         e.preventDefault();
         //A hack to get the form element, go into the form's children, 
@@ -10,14 +11,9 @@ const UsernameModal = ({ updateUsername }) => {
         updateUsername(username);
     };
 
-    const logme = (e) => {
-        console.log('clicked')
-    }
-
     return ( 
         <div className="modal-wrapper">
-            <div className="modal-background" onClick={logme}>
-            </div>
+            <div className="modal-background" />
 
             <div className="modal-card">
                 <form className="username-form" onSubmit={fireUpdateUsername}>

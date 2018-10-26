@@ -26,7 +26,11 @@ class InstantMessage extends React.Component {
         return ( 
             <div>
 
-                { loggedIn ? <h1 className="welcome-message"> { `Welcome ${this.state.username}`} </h1> : <UsernameModal updateUsername={this.updateUsername} /> }
+                { loggedIn ? 
+                    <h1 className="welcome-message"> { `Welcome ${this.state.username}`} </h1>
+                    : 
+                    <UsernameModal updateUsername={this.updateUsername} />
+                }
             </div>
         );
     }
