@@ -1,4 +1,5 @@
 import React from 'react';
+import UsernameModal from './UsernameModal';
 
 class InstantMessage extends React.Component {
     constructor(props) {
@@ -6,10 +7,17 @@ class InstantMessage extends React.Component {
         this.state = { 
             username: "",
         };
+        this.updateUsername = this.updateUsername.bind(this);
     }
 
     componentDidMount() {
-        setTimeout(() => this.setState({username: "Benji"}), 2000);
+        // setTimeout(() => this.setState({username: "Benji"}), 2000);
+    }
+
+    updateUsername(username){
+        this.setState({
+            username,
+        });
     }
 
     render() {
@@ -18,7 +26,7 @@ class InstantMessage extends React.Component {
         return ( 
             <div>
 
-                { loggedIn ? <h1> Welcome Friend </h1> : null }
+                { loggedIn ? <h1> Welcome Friend </h1> : <UsernameModal updateUsername={this.updateUsername} /> }
             </div>
         );
     }
