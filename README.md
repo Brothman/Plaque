@@ -87,7 +87,7 @@ When sending data between the backend and the frontend, semantic naming is essen
 
 ## c) How you would expand the software if you had more time
 
-There are many optimistic additions to Plaque I foresee for the future. The following are my top three optimizations.
+There are many additions to Plaque I foresee for the future. The following are my top three optimizations.
 
 #### 1. Persistent Users and Authentication. 
 
