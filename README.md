@@ -1,5 +1,5 @@
 # Plaque
-Benji's Favorite Instant Messenger
+Benji's Favorite Instant Messenger (Inspired by Slack)
 
 **plaque**
 
