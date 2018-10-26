@@ -40,7 +40,7 @@ class MessageCard extends React.Component {
         //A hack to get the form element, go into the form's children, 
         //find the input element, and get the input's value
         const messageText = e.currentTarget.elements[0].value;
-        
+
         const message = { body: messageText, username: this.props.username };
         App.cable.subscriptions.subscriptions[1].speak(message);
         this.setState({ message: "" });
@@ -48,7 +48,7 @@ class MessageCard extends React.Component {
 
     createMessages(messages){
         return messages.map((message) => {
-            return <Message key={message.id} message={message} />
+            return <Message key={message.id} message={message} username={this.props.username} />
         });
     }
 
@@ -56,8 +56,11 @@ class MessageCard extends React.Component {
         const messages = this.props.messages.messageArray;
         return ( 
             <div className="message-card">
+                <div className="message-container">
+                    {this.createMessages(messages)}
+                </div>
                 <form onSubmit={this.sendMessage}>
-                    { this.createMessages(messages) }
+                    
                     <input  autoFocus={true} type="text"
                             onChange={this.updateMessage} 
                             className="message-input"
