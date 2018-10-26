@@ -1,5 +1,6 @@
 import React from 'react';
 import UsernameModal from './UsernameModal';
+import MessageCard from './MessageCard';
 
 class InstantMessage extends React.Component {
     constructor(props) {
@@ -20,6 +21,8 @@ class InstantMessage extends React.Component {
         });
     }
 
+
+
     render() {
         const loggedIn = this.state.username !== "";
 
@@ -27,7 +30,11 @@ class InstantMessage extends React.Component {
             <div>
 
                 { loggedIn ? 
+                 <div>
                     <h1 className="welcome-message"> { `Welcome ${this.state.username}`} </h1>
+                    <MessageCard username={this.state.username} />
+                 </div>
+
                     : 
                     <UsernameModal updateUsername={this.updateUsername} />
                 }

@@ -65,7 +65,7 @@ body {
 
 .welcome-message {
     position: fixed;
-    top: calc(100vh - 60vh);
+    top: 10vhj;
     left: calc(100vw - 70vw);
     font-size: 80px;
     color: white;
