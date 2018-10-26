@@ -43,14 +43,19 @@ I used ActionCables, a built-in library in Ruby on Rails. ActionCables are a lay
 
 ActionCables rely on a Publication/Subscription structure. Anyone can subscribe to a `channel`. When new information is `published`, all objects that are `subscribed` to this channel will receive the new information. 
 
-To understand how Plaque works, it is first necessary to understand Websockets, TCP (Transfer Control Protocol), and HTTP (Hyper Text Transfer Protocol). 
+To understand how Plaque works, it is necessary to understand Websockets, TCP (Transmission Control Protocol), and HTTP (Hyper Text Transfer Protocol). 
 
-Websockets:
+##### Websockets: 
 
-Transfer Control Protocol (TCP): 
+Websockets are a recent computer communications protocol that allows for bidirectional data transfer (the client can `pull` data from the server and the server can `push` data to the client. This allows for **real time updates.**
 
-Hyper Text Transfer Protocol (HTTP):
+##### Transmission Control Protocol (TCP): 
 
+"TCP (Transmission Control Protocol) is a standard that defines how to establish and maintain a network conversation via which application programs can exchange data. TCP works with the Internet Protocol (IP), which defines how computers send packets of data to each other." https://en.wikipedia.org/wiki/Transmission_Control_Protocol
+
+##### Hyper Text Transfer Protocol (HTTP):
+
+"HTTP means HyperText Transfer Protocol. HTTP is the underlying protocol used by the World Wide Web and this protocol defines how messages are formatted and transmitted, and what actions Web servers and browsers should take in response to various commands." https://www.webopedia.com/TERM/H/HTTP.html
 
 ## b) What challenges you encountered
 
