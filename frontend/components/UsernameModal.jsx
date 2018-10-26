@@ -22,7 +22,7 @@ const UsernameModal = ({ updateUsername }) => {
             <div className="modal-card">
                 <form className="username-form" onSubmit={fireUpdateUsername}>
                     <h6 className="username-header">Username Please</h6>
-                    <input type="text" className="username-input" placeholder="Username" />
+                    <input autoFocus={true} type="text" className="username-input" placeholder="Username" />
                 </form>
             </div>
         </div>
