@@ -101,3 +101,10 @@ The CSS of Plaque needs work. I want to make an elegant barebones instant messag
 
 As hinted earlier, I want to add `direct messaging` into Plaque. This allows two users to communicate in real time with added privacy. 
 
+#### 4. Emoji Support
+
+I believe Emoji support can be added through a NPM React Package. I will research this further.
+
+#### 5. Different colors for different users
+
+I want each non-client user to have a random color assigned to it. This way everyone speaking can be identified by their color as well as their username.
