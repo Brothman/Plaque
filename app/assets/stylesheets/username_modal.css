@@ -60,3 +60,11 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.welcome-message {
+    position: fixed;
+    top: calc(100vh - 60vh);
+    left: calc(100vw - 70vw);
+    font-size: 80px;
+    color: white;
+}
