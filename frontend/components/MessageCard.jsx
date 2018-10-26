@@ -19,7 +19,6 @@ class MessageCard extends React.Component {
             { channel: "MessageChannel", room: "Message Room"},
             {
                 received: (message) => {
-                    // console.log(message);
                     this.props.receiveMessage(message);
                 },
                 speak: function(data) {
