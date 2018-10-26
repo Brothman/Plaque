@@ -63,7 +63,7 @@ I encountered many challenges while building Plaque. The following are the three
 
 #### 1. Understanding Websockets
 
-I knew I wanted to learn about websockets for weeks and this project gave me the motivation to learn about this fascinating tool. My consequent igorance about websockets was my greatest challenge. 
+I knew I wanted to learn about websockets for weeks and this project gave me the motivation to take action and actively learn about this fascinating tool. My consequent igorance about websockets was my greatest challenge. 
 
 **What were websockets?**
 
