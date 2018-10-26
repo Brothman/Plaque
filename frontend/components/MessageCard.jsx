@@ -1,6 +1,7 @@
 import React from 'react';
 import Message from './Message';
 import { connect } from 'react-redux';
+import { receiveMessage } from '../actions/MessageActions';
 
 class MessageCard extends React.Component {
     constructor(props) {
@@ -17,10 +18,9 @@ class MessageCard extends React.Component {
         App.cable.subscriptions.create(
             { channel: "MessageChannel", room: "Message Room"},
             {
-                received: (data) => {
-                    // dispatch(receiveMessage(message));
-                    console.log(data);
-                    console.log('hi')
+                received: (message) => {
+                    // console.log(message);
+                    this.props.receiveMessage(message);
                 },
                 speak: function(data) {
                     return this.perform("speak", data);
@@ -40,17 +40,24 @@ class MessageCard extends React.Component {
         //A hack to get the form element, go into the form's children, 
         //find the input element, and get the input's value
         const messageText = e.currentTarget.elements[0].value;
+        
         const message = { body: messageText, username: this.props.username };
         App.cable.subscriptions.subscriptions[1].speak(message);
         this.setState({ message: "" });
     }
 
+    createMessages(messages){
+        return messages.map((message) => {
+            return <Message key={message.id} message={message} />
+        });
+    }
+
     render() { 
-        const messages = this.props.messages;
+        const messages = this.props.messages.messageArray;
         return ( 
             <div className="message-card">
                 <form onSubmit={this.sendMessage}>
-                    { messages }
+                    { this.createMessages(messages) }
                     <input  autoFocus={true} type="text"
                             onChange={this.updateMessage} 
                             className="message-input"
@@ -68,4 +75,10 @@ const mapStateToProps = ( { messages } )  => {
     };
 };
 
-export default connect(mapStateToProps)(MessageCard);
+const mapDispatchToProps = ( dispatch ) => {
+    return {
+        receiveMessage: (message) => dispatch(receiveMessage(message.message)),
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MessageCard);
