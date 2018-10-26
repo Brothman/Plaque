@@ -1,5 +1,4 @@
 # Plaque
-Benji's Favorite Instant Messenger (Inspired by Slack)
 
 Plaque can be found live at http://plaque.herokuapp.com/.
 
