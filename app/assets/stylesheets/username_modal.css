@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-image: url("https://source.unsplash.com/random/1600x900")
 }
 
 .modal-wrapper {
@@ -15,17 +16,19 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: #ccc;
-    opacity: 0.4;
+    opacity: 0.5;
     position: fixed;
     z-index: 1;
 }
 
 .modal-card {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     position: relative;
     z-index: 5;
-    background-color: blue;
+    background-color: white;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .08), 0 2px 15px rgba(0, 0, 0, .2);
+    text-rendering: optimizeLegibility;
 }
 
 .modal-card form {
@@ -38,12 +41,22 @@ body {
 }
 
 .modal-card form input {
-    height: 30px;
-    width: 200px;
+    height: 40px;
+    width: 250px;
+    border: 0;
+    border-bottom: 1px solid blue;
+    font-size: 24px;
+    position: relative;
+    bottom: 75px;
+}
+
+.modal-card form input:active, input:focus {
+    outline: none;
+    /* border-bottom: 1px solid blue; */
 }
 
 .modal-card h6 {
-    font-size: 30px;
+    font-size: 40px;
     margin: 0;
     padding: 0;
 }
