@@ -19,9 +19,6 @@ RSpec.describe MessageChannel, type: :channel do
 
     let(:action_cable) { ActionCable.server }
 
-  # ActionCable dispatches actions by the `action` attribute.
-  # In this test we assume the payload was successfully parsed (it could be a JSON payload, for example). 
-
   #My unique contribution starts here. 
   let(:message) do
     {
