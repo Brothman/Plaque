@@ -57,6 +57,14 @@ Websockets are a recent computer communications protocol that allows for bidirec
 
 "HTTP means HyperText Transfer Protocol. HTTP is the underlying protocol used by the World Wide Web and this protocol defines how messages are formatted and transmitted, and what actions Web servers and browsers should take in response to various commands." https://www.webopedia.com/TERM/H/HTTP.html
 
+### Tests
+
+I added five tests to Plaque: one channel/action cable test for broadcasting with the MessageChannel, and four model validations for the Message Model. 
+
+You can find the code in `plaque/app/spec/channels/message_channel_spec.rb` and `plaque/app/spec/models/message_spec.rb` .
+
+I relied on the `rspec-rails` and `shoulda-matchers` gem for my testing. I installed `factory_bot_rails` and `faker`, which I used to set up a factory for Messages; however, I did not need to use that factory method. 
+
 ## b) What challenges you encountered
 
 I encountered many challenges while building Plaque. The following are the three most interesting problems I encounted. 
