@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM 'react-dom';
 
 class Message extends React.Component {
     constructor(props) {
@@ -14,14 +15,15 @@ class Message extends React.Component {
     }
     render() { 
         const message = this.props.message;
-        const messageBody = React.createElement('div');
+        const messageBody = document.createElement('div');
         messageBody.innerHTML = message.body;
+        const reactMessageBody = ReactDOM.render('div', messageBody);
 
         if (message.username == this.props.username) {
             return (
                 <div className="my-message">
                     <p className="message-username"> {message.username} </p>
-                    <div className="message-body"> {messageBody} </div>
+                    <div className="message-body"> {reactMessageBody} </div>
                 </div>
             );
         }
