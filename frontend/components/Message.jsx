@@ -15,9 +15,7 @@ class Message extends React.Component {
     }
     render() { 
         const message = this.props.message;
-        const messageBody = document.createElement('div');
-        messageBody.innerHTML = message.body;
-        const reactMessageBody = ReactDOM.render('div', messageBody);
+        const reactMessageBody = <div dangerouslySetInnerHTML={{ __html: message.body }}></div>
 
         if (message.username == this.props.username) {
             return (
@@ -32,7 +30,7 @@ class Message extends React.Component {
             return (
                 <div className="others-message">
                     <p className="message-username"> {message.username} </p>
-                    <p className="message-body"> {message.body} </p>
+                    <p className="message-body"> {reactMessageBody} </p>
                 </div>
             );
         }

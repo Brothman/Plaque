@@ -102,6 +102,20 @@ class MessageCard extends React.Component {
         // this.setState({ emojisVisible: true });
         const myEmojiPicker = document.querySelector(".my-emoji-picker");
         myEmojiPicker.style.visibility = "hidden";
+
+
+       
+
+        const messageInput = document.querySelector(".message-input");
+        // messageInput.focus();
+
+        var range = document.createRange();
+        var sel = window.getSelection();
+        range.setStart(messageInput.childNodes[0], 2);
+        range.collapse(true);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        messageInput.focus();
     }
 
     clearMessageInput() {
