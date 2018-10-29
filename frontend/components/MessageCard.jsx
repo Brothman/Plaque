@@ -54,6 +54,7 @@ class MessageCard extends React.Component {
         const messageInput = document.querySelector(".message-input");
         messageInput.focus();
 
+        //will send a blank message from choosing username, that we block with validations
         this.listenForEnter(messageInput);
     }
 
@@ -67,7 +68,8 @@ class MessageCard extends React.Component {
         });
 
         messageInput.addEventListener('keyup', e => {
-            if (e.keyCode === 13) {
+            if (e.keyCode === 13 && messageInput.innerHTML !== "") {
+                //do not send empty messages
                 this.sendMessage(messageInput.innerHTML);
             }
         });
