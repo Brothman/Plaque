@@ -19,7 +19,7 @@ class Message extends React.Component {
             return (
                 <div className="my-message">
                     <p className="message-username"> {message.username} </p>
-                    <p className="message-body"> {message.body} </p>
+                    <div className="message-body"> {message.body} </div>
                 </div>
             );
         }
