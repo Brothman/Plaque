@@ -10,6 +10,7 @@
     text-rendering: optimizeLegibility;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
 }
 
 .message-card form {
@@ -20,7 +21,7 @@
 
 .message-input {
     height: 40px;
-    width: 100%;
+    width: 90%;
     border: 0;
     border-bottom: 2px solid blue;
     font-size: 24px;
@@ -60,3 +61,29 @@
 .message-username {
     font-size: 12px;
 }
+
+.my-emoji-picker {
+    position: fixed;
+    z-index: 20;
+    bottom: 230px;
+    left: 530px;
+}
+
+.smile-icon{
+    position: fixed;
+    z-index: 15;
+    left: 530px;
+    font-size: 26px;
+    left: 775px;
+    bottom: 240px;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+    border-radius: 50%;
+}
+
+.smile-icon:hover {
+    font-size: 32px;
+    background-color: yellow;
+    left: 774px;
+    bottom: 239px;
+}
+
