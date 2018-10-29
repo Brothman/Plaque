@@ -107,6 +107,10 @@ class MessageCard extends React.Component {
        
 
         const messageInput = document.querySelector(".message-input");
+        if (messageInput.childNodes.length === 0) {
+            messageInput.focus();
+            return;
+        }
         // messageInput.focus();
 
         // const innerHTML = messageInput.innerHTML;
@@ -144,8 +148,8 @@ class MessageCard extends React.Component {
         const messages = this.props.messages.messageArray;
 
         return ( 
-            <div className="message-card">
-                <div className="message-container">
+            <div className="message-card" >
+                <div className="message-container" onClick={this.hideEmojiPicker}>
                     {this.createMessages(messages)}
                 </div>
 

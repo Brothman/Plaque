@@ -21,7 +21,10 @@
 
 .message-input {
     height: 40px;
-    width: 85%;
+    width: 80%;
+    max-height: 40px;
+    overflow-x: auto;
+    word-break:break-all;
     border: 0;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -31,7 +34,8 @@
     font-family: "Helvetica";
     align-self: flex-end;
     margin: 0 auto;
-    padding: 5px;
+    padding: 20px;
+    padding-right: 50px;
 
     display: flex;
     align-items: center;
@@ -51,6 +55,7 @@
     /* max-height: (100vh - 52vh); */
     overflow-y: auto;
     padding-bottom: 15px;
+    padding-top: 15px;
 }
 
 .others-message {
@@ -87,22 +92,24 @@
 .smile-icon{
     position: absolute;
     z-index: 15;
-    bottom: 15px;
-    right: 5vw;
-    font-size: 26px;
+    bottom: 20px;
+    right: 4vw;
+    font-size: 36px;
     transition: font-size 0.3s ease, background-color 0.3s ease;
     border-radius: 50%;
 }
 
 .smile-icon:hover {
-    font-size: 32px;
+    font-size: 42px;
     background-color: yellow;
-    bottom: 14px;
-    right: 5vw;
+    bottom: 19px;
+    right: 4vw;
     cursor: pointer;
 }
 
 .message-div {
     display: flex;
     align-items: center;
+    max-width: 85%;
+    word-break:break-all;
 }
