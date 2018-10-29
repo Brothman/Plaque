@@ -49,23 +49,41 @@ class MessageCard extends React.Component {
                 }
             }
         );
+
+        //auto focus on contentEditable Div to send Messsages
+        const messageInput = document.querySelector(".message-input");
+        messageInput.focus();
+
+        this.listenForEnter(messageInput);
+    }
+
+    listenForEnter(messageInput) {
+
+        messageInput.addEventListener('keydown', function (e) {
+            //stop a new div being created upon enter click
+            if (e.keyCode === 13) {
+                e.preventDefault();
+            }
+        });
+
+        messageInput.addEventListener('keyup', e => {
+            if (e.keyCode === 13) {
+                this.sendMessage(messageInput.innerHTML);
+            }
+        });
     }
 
     updateMessage(e) {
+        console.log('hi')
         this.setState({
             message: e.target.value,
         });
     }
 
-    sendMessage(e){
-        e.preventDefault();
-        //A hack to get the form element, go into the form's children, 
-        //find the input element, and get the input's value
-        const messageText = e.currentTarget.elements[0].value;
-
+    sendMessage(messageText){
         const message = { body: messageText, username: this.props.username };
         App.cable.subscriptions.subscriptions[1].speak(message);
-        this.setState({ message: "" });
+        this.clearMessageInput();
     }
 
     createMessages(messages){
@@ -80,17 +98,24 @@ class MessageCard extends React.Component {
         myEmojiPicker.style.visibility = "visible";
     }
 
-    addEmoji(emoji, emojiData) {
-        const oldMessage = this.state.message;
-
-        const parsedEmoji = this.state.jsemoji.replace_colons(`:${emojiData.name}:`);
-        console.log(parsedEmoji);
-        // console.log(emoji)
-        // console.log(emojiData);
-        const message = oldMessage + parsedEmoji;
-        this.setState({ message });
+    hideEmojiPicker() {
+        // this.setState({ emojisVisible: true });
         const myEmojiPicker = document.querySelector(".my-emoji-picker");
         myEmojiPicker.style.visibility = "hidden";
+    }
+
+    clearMessageInput() {
+        const messageInput = document.querySelector(".message-input");
+        messageInput.innerHTML = "";
+    }
+
+    addEmoji(emoji, emojiData) {
+        const parsedEmoji = this.state.jsemoji.replace_colons(`:${emojiData.name}:`);
+
+        const messageInput = document.querySelector(".message-input");
+        messageInput.innerHTML += parsedEmoji;
+
+        this.hideEmojiPicker();
     }
 
     render() { 
@@ -101,20 +126,21 @@ class MessageCard extends React.Component {
                 <div className="message-container">
                     {this.createMessages(messages)}
                 </div>
-                <form onSubmit={this.sendMessage}>
 
-                    <div className="my-emoji-picker" style={{ visibility: "hidden" }}>
-                        <EmojiPicker className="hello" onEmojiClick={this.addEmoji} />
-                    </div>
+                <div className="my-emoji-picker" style={{ visibility: "hidden" }}>
+                    <EmojiPicker className="hello" onEmojiClick={this.addEmoji} />
+                </div>
 
-                    <i onClick={this.showEmojiPicker} className="smile-icon far fa-smile"></i>
-           
-                    <input  autoFocus={true} type="text"
-                            onChange={this.updateMessage} 
-                            className="message-input"
-                            placeholder="Enter Message" 
-                            value={this.state.message} />
-                </form>
+                <i onClick={this.showEmojiPicker} className="smile-icon far fa-smile"></i>
+
+                <div  autoFocus={true} type="text"
+                        onChange={this.updateMessage} 
+                        className="message-input"
+                        placeholder="Enter Message" 
+                        value={this.state.message}
+                        contentEditable>
+                </div>
+
             </div>
          );
     }
