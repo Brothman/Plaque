@@ -15,7 +15,7 @@ class Message extends React.Component {
     }
     render() { 
         const message = this.props.message;
-        const reactMessageBody = <div dangerouslySetInnerHTML={{ __html: message.body }}></div>
+        const reactMessageBody = <div className="message-div" dangerouslySetInnerHTML={{ __html: message.body }}></div>
 
         if (message.username == this.props.username) {
             return (

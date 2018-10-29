@@ -109,10 +109,18 @@ class MessageCard extends React.Component {
         const messageInput = document.querySelector(".message-input");
         // messageInput.focus();
 
+        // const innerHTML = messageInput.innerHTML;
+        // messageInput.innerHTML = "";
+        // messageInput.focus();
+        // messageInput.innerHTML = innerHTML;
+
+
         var range = document.createRange();
         var sel = window.getSelection();
-        range.setStart(messageInput.childNodes[0], 2);
-        range.collapse(true);
+        const length = messageInput.childNodes.length;
+        // range.setStart(messageInput.childNodes[0], 1000);
+        range.setEnd(messageInput.childNodes[length - 1], 0); 
+        range.collapse(false);
         sel.removeAllRanges();
         sel.addRange(range);
         messageInput.focus();

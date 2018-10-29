@@ -99,3 +99,7 @@
     bottom: 243px;
 }
 
+.message-div {
+    display: flex;
+    align-items: center;
+}
