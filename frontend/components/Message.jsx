@@ -14,7 +14,7 @@ class Message extends React.Component {
     }
     render() { 
         const message = this.props.message;
-        const messageBody = document.createElement('div');
+        const messageBody = React.createElement('div');
         messageBody.innerHTML = message.body;
 
         if (message.username == this.props.username) {
