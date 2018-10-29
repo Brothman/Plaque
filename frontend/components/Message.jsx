@@ -14,12 +14,14 @@ class Message extends React.Component {
     }
     render() { 
         const message = this.props.message;
+        const messageBody = document.createElement('div');
+        messageBody.innerHTML = message.body;
 
         if (message.username == this.props.username) {
             return (
                 <div className="my-message">
                     <p className="message-username"> {message.username} </p>
-                    <div className="message-body"> {message.body} </div>
+                    <div className="message-body"> {messageBody} </div>
                 </div>
             );
         }
