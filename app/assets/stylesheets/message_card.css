@@ -21,18 +21,16 @@
 
 .message-input {
     height: 40px;
-    width: 90%;
+    width: 85%;
     border: 0;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 24px;
     position: relative;
-    bottom: 1px;
+    bottom: 5px;
     font-family: "Helvetica";
     align-self: flex-end;
-    margin-right: 5px;
-    margin-left: 20px;
-    margin-bottom: 5px;
+    margin: 0 auto;
     padding: 5px;
 
     display: flex;
@@ -75,19 +73,18 @@
 }
 
 .my-emoji-picker {
-    position: fixed;
+    position: absolute;
     z-index: 20;
-    bottom: 230px;
-    left: 530px;
+    bottom: 15px;
+    right: 40px;
 }
 
 .smile-icon{
-    position: fixed;
+    position: absolute;
     z-index: 15;
-    left: 530px;
+    bottom: 15px;
+    right: 50px;
     font-size: 26px;
-    left: 765px;
-    bottom: 244px;
     transition: font-size 0.3s ease, background-color 0.3s ease;
     border-radius: 50%;
 }
@@ -95,8 +92,8 @@
 .smile-icon:hover {
     font-size: 32px;
     background-color: yellow;
-    left: 764px;
-    bottom: 243px;
+    bottom: 14px;
+    right: 49px;
 }
 
 .message-div {
