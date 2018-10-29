@@ -30,7 +30,7 @@ class Message extends React.Component {
             return (
                 <div className="others-message">
                     <p className="message-username"> {message.username} </p>
-                    <p className="message-body"> {reactMessageBody} </p>
+                    <div className="message-body"> {reactMessageBody} </div>
                 </div>
             );
         }
