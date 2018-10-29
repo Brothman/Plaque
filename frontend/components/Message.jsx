@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM 'react-dom';
+import ReactDOM from 'react-dom';
 
 class Message extends React.Component {
     constructor(props) {
