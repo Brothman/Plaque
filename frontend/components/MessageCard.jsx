@@ -105,21 +105,12 @@ class MessageCard extends React.Component {
         const myEmojiPicker = document.querySelector(".my-emoji-picker");
         myEmojiPicker.style.visibility = "hidden";
 
-
-       
-
+        //Autofocus if there is no text in the message input box
         const messageInput = document.querySelector(".message-input");
         if (messageInput.childNodes.length === 0) {
             messageInput.focus();
             return;
         }
-        // messageInput.focus();
-
-        // const innerHTML = messageInput.innerHTML;
-        // messageInput.innerHTML = "";
-        // messageInput.focus();
-        // messageInput.innerHTML = innerHTML;
-
 
         var range = document.createRange();
         var sel = window.getSelection();
