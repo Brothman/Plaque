@@ -142,6 +142,8 @@ class MessageCard extends React.Component {
 
         const messageInput = document.querySelector(".message-input");
         messageInput.innerHTML += parsedEmoji;
+        //Add the space to ensure cursor is placed AFTER Emoji
+        messageInput.innerHTML += " ";
 
         this.hideEmojiPicker();
     }
