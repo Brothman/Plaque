@@ -45,6 +45,10 @@ ActionCables rely on a Publication/Subscription structure. Anyone can subscribe 
 
 To understand how Plaque works, it is necessary to understand Websockets, TCP (Transmission Control Protocol), and HTTP (Hyper Text Transfer Protocol). 
 
+## Emoji Support
+
+Plaque supports emojis! 
+
 ##### Websockets: 
 
 Websockets are a recent computer communications protocol that allows for bidirectional data transfer (the client can `pull` data from the server and the server can `push` data to the client. This allows for **real time updates.**
@@ -108,10 +112,6 @@ The CSS of Plaque needs work. I want to make an elegant barebones instant messag
 #### 3. Direct Messaging
 
 As hinted earlier, I want to add `direct messaging` into Plaque. This allows two users to communicate in real time with added privacy. 
-
-#### 4. Emoji Support
-
-I believe Emoji support can be added through a NPM React Package. I will research this further.
 
 #### 5. Different colors for different users
 
